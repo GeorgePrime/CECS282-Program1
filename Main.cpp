@@ -11,16 +11,6 @@ using namespace std;
 *Create your own function called "isPrime" (cannot use C++ library function). One is not a prime number.
 */
 bool isPrime(int num) {
-    /*
-    bool prime = true;
-    if (num == 1 || num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7== 0 || num % 11 == 0 || num % 13 == 0) {
-        prime= false;
-    }
-    if (num == 2 || num == 3 || num == 5 || num == 7 || num == 11 || num == 13) {
-        prime = true;
-    }
-    return prime;
-    */
     if (num <= 1)
         return false;
     for (int i = 2; i < num; i++)
@@ -74,34 +64,38 @@ int main() {
             "\n4) Play Solitaire Prime\n5) Exit\n";
         cin >> choice;
 
-        switch (choice) {
-            //This will create an unshuffled deck in the following order: Spades, Hearts, Diamonds, Clubs...Ace, 2, 3,..., 10, Jack, Queen, King.
-        case 1:
+        //This will create an unshuffled deck in the following order: Spades, Hearts, Diamonds, Clubs...Ace, 2, 3,..., 10, Jack, Queen, King.
+        if (choice==1) {
             cout << "\nThe deck of cards has been reorganized.\n";
             deck.refreshDeck();
-            break;
-            //This will display all cards in a grid: 13 columns by 4 rows.
-        case 2:
+        }
+        //This will display all cards in a grid: 13 columns by 4 rows.
+        else if (choice == 2) {
             cout << "\nThe game's current deck of cards.\n";
             deck.showDeck();
-            break;
-            //This will randomly shuffle all the cards in the deck.
-        case 3:
+        }
+        //This will randomly shuffle all the cards in the deck.
+        else if (choice == 3) {
             cout << "\nThe deck of cards has been shuffled.\n";
             deck.shuffle();
-            break;
-            //This will play the game as described above.
-        case 4:
+        }
+        //This will play the game as described above.
+        else if (choice == 4) {
             cout << "\nYour deck of cards.\n";
             deck.showDeck();
             cout << "\nYour hand has been dealt, goodluck!\n";
             play(deck);
-            break;
-            //This will exit the program.
-        case 5:
+        }
+        //This will exit the program.
+        else if (choice == 5) {
             cout << "\nThank you for playing Solitaire Prime!\n";
-            break;
+        }
+        else {
+            cout << "Invalid choice, please enter 1 through 5. \n";
+            cin.clear();
+            cin.ignore(10000, '\n');
         }
     }
+    getchar();
     return 0;
 }
