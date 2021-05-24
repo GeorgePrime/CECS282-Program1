@@ -1,2 +1,0 @@
-C:\Users\George Vargas\source\repos\CECS282Prog1\Debug\CECS282Prog1.exe
-C:\Users\George Vargas\source\repos\CECS282Prog1\Debug\CECS282Prog1.pdb
